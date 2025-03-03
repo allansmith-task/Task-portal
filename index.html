@@ -7,20 +7,63 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header with Cover Photo & Logo -->
     <header>
-        <img src="logo.png" alt="Company Logo" width="200">
-        <h1>Smith Task Portal</h1>
-        <p>Welcome to our employee task management system</p>
+        <div class="cover">
+            <img src="cover.jpg" alt="Company Cover Photo">
+            <div class="logo-circle">
+                <img src="logo.png" alt="Company Logo">
+            </div>
+        </div>
+        <h1>Welcome to Smith Task Portal</h1>
+        <p>Your one-stop platform for employee management and customer engagement.</p>
     </header>
 
-    <div class="cover">
-        <img src="cover.jpg" alt="Company Cover Photo">
-    </div>
-
-    <section class="forms">
-        <h2>Submit Work Reports</h2>
-        <a class="button" href="https://forms.gle/r5dfrSkoWEYC1iGN6" target="_blank">📋 Work Completion Form</a>
-        <a class="button" href="https://forms.gle/AR6n6kSKjc7GRiDF7" target="_blank">📝 Customer Feedback Form</a>
+    <!-- Status / Announcements Section -->
+    <section class="status">
+        <h2>📢 Latest Updates</h2>
+        <p id="statusMessage">(Update this section for new announcements or achievements)</p>
     </section>
+
+    <!-- Company Achievements -->
+    <section class="achievements">
+        <h2>🏆 Our Achievements</h2>
+        <p>We have successfully completed over 500 projects worldwide, ensuring top-quality services.</p>
+    </section>
+
+    <!-- Technical Experts -->
+    <section class="experts">
+        <h2>👨‍💼 Meet Our Experts</h2>
+        <div class="expert-card">
+            <img src="sailesh.jpg" alt="Sailesh Vishwarma">
+            <p><strong>Sailesh Vishwarma</strong> (Sr. Expert)</p>
+        </div>
+        <div class="expert-card">
+            <img src="pratik.jpg" alt="Pratik Sir">
+            <p><strong>Pratik Sir</strong> (Sr. Executive Engineer)</p>
+        </div>
+        <div class="expert-card">
+            <img src="nidhi.jpg" alt="Nidhi">
+            <p><strong>Nidhi</strong> (Technical Consultant)</p>
+        </div>
+    </section>
+
+    <!-- Portals Section -->
+    <section class="portals">
+        <h2>🚀 Our Portals</h2>
+        <div class="portal">
+            <h3>Smith Task Portal</h3>
+            <p>Welcome to our employee task management system.</p>
+        </div>
+        <div class="portal">
+            <h3>Customer Review Portal</h3>
+            <a href="https://forms.gle/r5dfrSkoWEYC1iGN6" target="_blank">📋 Customer Feedback Form</a>
+        </div>
+        <div class="portal">
+            <h3>Employee Task Portal</h3>
+            <a href="https://forms.gle/AR6n6kSKjc7GRiDF7" target="_blank">📝 Employee Feedback Form</a>
+        </div>
+    </section>
+
 </body>
 </html>
