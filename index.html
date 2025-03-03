@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smith Task Portal</title>
     <style>
-        /* General Page Styling */
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(to right, #4facfe, #00f2fe);
@@ -14,39 +13,31 @@
             margin: 0;
             padding: 0;
         }
-
-        /* Header with Logo and Cover Photo */
         header {
             display: flex;
-            align-items: center;
             justify-content: flex-start;
+            align-items: center;
             padding: 20px;
             background: rgba(0, 0, 0, 0.1);
             position: relative;
         }
-
         .logo {
-            height: 100px; /* Larger Logo */
+            height: 120px;
             position: absolute;
             left: 20px;
-            top: 10px;
+            top: 20px;
         }
-
         .cover-photo {
             width: 100%;
             max-height: 300px;
             object-fit: cover;
             border-radius: 10px;
-            margin-top: 20px;
         }
-
-        /* Portal Styling */
         .portal-container {
             display: flex;
             justify-content: center;
             margin-top: 30px;
         }
-
         .portal {
             background: rgba(255, 255, 255, 0.2);
             padding: 15px 30px;
@@ -56,35 +47,25 @@
             font-size: 20px;
             transition: 0.3s;
         }
-
         .portal:hover {
             background: rgba(255, 255, 255, 0.5);
         }
-
-        /* Welcome Message & Google Form Links */
         .welcome-message {
             margin-top: 20px;
             font-size: 22px;
             font-weight: bold;
             padding: 10px;
         }
-
-        .form-link {
-            display: inline-block;
+        .form-links {
             margin-top: 10px;
-            padding: 10px 20px;
-            background: #ffcc00;
-            color: black;
+        }
+        .form-links a {
+            color: yellow;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+            font-size: 18px;
+            display: block;
+            margin: 5px;
         }
-
-        .form-link:hover {
-            background: #ff9900;
-        }
-
-        /* Footer */
         footer {
             margin-top: 50px;
             padding: 10px;
@@ -94,40 +75,41 @@
 </head>
 <body>
 
-    <!-- Header Section -->
     <header>
-        <img src="logo.png" alt="Company Logo" class="logo"> <!-- Replace with your logo -->
+        <img src="logo.png" alt="Company Logo" class="logo">
     </header>
-    <img src="cover.jpg" alt="Cover Photo" class="cover-photo"> <!-- Replace with your cover photo -->
 
-    <!-- Portal Buttons -->
+    <img src="cover.jpg" alt="Cover Photo" class="cover-photo">
+
     <div class="portal-container">
         <div class="portal" onclick="showMessage('employee')">Employee Portal</div>
         <div class="portal" onclick="showMessage('customer')">Customer Portal</div>
     </div>
 
-    <!-- Welcome Message Section -->
-    <div id="welcome-message"></div>
+    <div id="message-container"></div>
 
-    <!-- JavaScript to Show Messages & Google Forms -->
+    <footer>
+        © 2025 Smith Task Portal. All rights reserved.
+    </footer>
+
     <script>
         function showMessage(type) {
             let message = "";
-            if (type === 'employee') {
-                message = '<h2>Welcome to our Employee Task Management System</h2>' +
-                          '<a href="https://forms.gle/AR6n6kSKjc7GRiDF7" target="_blank" class="form-link">Complete Your Work Here</a>';
-            } else if (type === 'customer') {
-                message = '<h2>Welcome to the Customer Feedback Portal</h2>' +
-                          '<a href="https://forms.gle/r5dfrSkoWEYC1iGN6" target="_blank" class="form-link">Give Your Feedback Here</a>';
+            let link = "";
+
+            if (type === "employee") {
+                message = "Welcome to our Employee Task Management System.";
+                link = '<a href="https://forms.gle/AR6n6kSKjc7GRiDF7" target="_blank">Employee Work Completion Form</a>';
+            } else if (type === "customer") {
+                message = "Welcome to our Customer Feedback Portal.";
+                link = '<a href="https://forms.gle/r5dfrSkoWEYC1iGN6" target="_blank">Customer Feedback Form</a>';
             }
-            document.getElementById('welcome-message').innerHTML = message;
+
+            document.getElementById("message-container").innerHTML = 
+                '<div class="welcome-message">' + message + '</div>' +
+                '<div class="form-links">' + link + '</div>';
         }
     </script>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Smith Task Portal. All Rights Reserved.</p>
-    </footer>
 
 </body>
 </html>
