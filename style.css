@@ -17,10 +17,10 @@ header {
 }
 
 .logo {
-    height: 100px;
+    height: 140px;
     position: absolute;
     right: 20px;
-    top: 10px;
+    top: 30px;
 }
 
 .cover-photo {
