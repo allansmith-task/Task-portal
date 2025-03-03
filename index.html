@@ -1,34 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smith Task Portal</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <img src="logo.png" alt="Company Logo" class="logo">
-        <img src="cover.jpg" alt="Cover Photo" class="cover-photo">
-    </header>
-    <main>
-        <div class="portal-container">
-            <div class="portal" onclick="showMessage('employee')">Employee Portal</div>
-            <div class="portal" onclick="showMessage('customer')">Customer Portal</div>
-        </div>
-        <div id="welcome-message" class="welcome-message"></div>
-    </main>
-    <footer>
-        <p>&copy; 2025 Smith Task Portal | All Rights Reserved</p>
-    </footer>
+<div id="welcome-message"></div>
 
-    <script>
-        function showMessage(type) {
-            let message = type === 'employee' 
-                ? '<h2>Welcome to our Employee Task Management System</h2>'
-                : '<h2>Welcome to the Customer Feedback Portal</h2>';
-            document.getElementById('welcome-message').innerHTML = message;
+<script>
+    function showMessage(type) {
+        let message = "";
+        if (type === 'employee') {
+            message = '<h2>Welcome to our Employee Task Management System</h2>' +
+                      '<a href="https://forms.gle/AR6n6kSKjc7GRiDF7" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #ffcc00; color: black; text-decoration: none; border-radius: 5px;">Complete Your Work Here</a>';
+        } else if (type === 'customer') {
+            message = '<h2>Welcome to the Customer Feedback Portal</h2>' +
+                      '<a href="https://forms.gle/r5dfrSkoWEYC1iGN6" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #ff6600; color: white; text-decoration: none; border-radius: 5px;">Give Your Feedback Here</a>';
         }
-    </script>
-</body>
-</html>
+        document.getElementById('welcome-message').innerHTML = message;
+    }
+</script>
