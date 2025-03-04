@@ -62,3 +62,8 @@ footer {
     padding: 10px;
     background: rgba(0, 0, 0, 0.2);
 }
+/* Add new rule for Our Technical Experts heading */
+.experts h2 {
+    color: black;
+    font-weight: bold;
+}
