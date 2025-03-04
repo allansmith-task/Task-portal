@@ -15,17 +15,16 @@
         }
         header {
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             padding: 20px;
             background: rgba(0, 0, 0, 0.1);
-            position: relative;
         }
         .logo {
-            height: 100px;
+            height: 120px;
             position: absolute;
             left: 20px;
-            top: 20px;
+            top: 10px;
         }
         .cover-photo {
             width: 100%;
@@ -56,50 +55,43 @@
             font-weight: bold;
             padding: 10px;
         }
-        .achievements-link {
-            display: inline-block;
-            color: white;
-            font-size: 20px;
-            text-decoration: none;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .experts-section {
+        .experts {
             margin-top: 50px;
             padding: 20px;
             background: rgba(0, 0, 0, 0.2);
             border-radius: 10px;
         }
-        .expert {
-            font-size: 18px;
-            margin: 10px 0;
+        footer {
+            margin-top: 50px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-
     <header>
         <img src="logo.png" alt="Company Logo" class="logo">
     </header>
-
-    <h1>Welcome to Smith Task Portal</h1>
-    <p>Your trusted platform for employee tasks and customer feedback.</p>
-
+    <img src="cover-photo.jpg" alt="Cover Photo" class="cover-photo">
+    
     <div class="portal-container">
-        <div class="portal" onclick="window.location.href='customer-portal.html'">Customer Portal</div>
-        <div class="portal" onclick="window.location.href='employee-portal.html'">Employee Portal</div>
+        <div class="portal" onclick="window.location.href='https://forms.gle/AR6n6kSKjc7GRiDF7'">Employee Portal</div>
+        <div class="portal" onclick="window.location.href='https://forms.gle/r5dfrSkoWEYC1iGN6'">Customer Portal</div>
     </div>
-
-    <a href="achievements.html" class="achievements-link">🎖 View Our Achievements</a>
-
-    <div class="experts-section">
+    
+    <div class="welcome-message">Welcome to the Smith Task Portal</div>
+    
+    <a href="achievements.html" style="color: white; font-size: 20px; text-decoration: none; display: block; margin-top: 20px;">🎖 View Our Achievements</a>
+    
+    <div class="experts">
         <h2>Our Technical Experts</h2>
-        <div class="expert">Shailesh Vishwakarma - <strong>Sr. Technical Expert</strong></div>
-        <div class="expert">Pratik Badhkal - <strong>Sr. Executive Engineer</strong></div>
-        <div class="expert">Nidhi  - <strong>Technical Consultant</strong></div>
+        <p>🔹 Sailesh Vishwakarma (Sr. Technical Expert)</p>
+        <p>🔹 Pratik (Sr. Executive Engineer)</p>
+        <p>🔹 Nidhi (Technical Consultant)</p>
     </div>
-
+    
+    <footer>
+        © 2025 Smith Task Portal. All Rights Reserved.
+    </footer>
 </body>
 </html>
