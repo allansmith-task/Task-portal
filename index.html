@@ -25,7 +25,7 @@
       height: 100px;
       position: absolute;
       left: 20px;
-      top: 20px;
+      top: 10px;
     }
     .cover-photo {
       width: 100%;
@@ -57,14 +57,14 @@
       font-weight: bold;
       padding: 10px;
     }
-    .current-status {
+    .site-status {
       margin: 20px auto;
       max-width: 800px;
       background: rgba(0, 0, 0, 0.2);
       padding: 15px;
       border-radius: 10px;
     }
-    .current-status h2 {
+    .site-status h2 {
       margin-bottom: 10px;
     }
     .experts {
@@ -115,7 +115,7 @@
     <img src="logo.png" alt="Company Logo" class="logo">
   </header>
   
-  <!-- Make sure your cover photo file is named "cover-photo.jpg" -->
+  <!-- Ensure your cover photo file is named "cover-photo.jpg" -->
   <img src="cover-photo.jpg" alt="Cover Photo" class="cover-photo">
   
   <div class="portal-container">
@@ -131,13 +131,26 @@
     Welcome to Smith Task Portal
   </div>
   
-  <!-- Current Status Section with Google Sheet Embed -->
-  <div class="current-status">
-    <h2>Current Status</h2>
-    <iframe src="https://docs.google.com/spreadsheets/d/1EBUQZegNP_XHgzApNnp5gij40kFdrgaw_JYqmd0ycLg/pubhtml?widget=true&amp;headers=false" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+  <!-- Site Current Status Section with Password-Protected Google Sheet -->
+  <div class="site-status">
+    <h2>Site Current Status</h2>
+    <button onclick="checkPassword()" style="padding:10px 20px; font-size:16px; cursor:pointer;">View Status</button>
+    <div id="sheet-container" style="display:none; margin-top:20px;">
+      <iframe src="https://docs.google.com/spreadsheets/d/1EBUQZegNP_XHgzApNnp5gij40kFdrgaw_JYqmd0ycLg/pubhtml?widget=true&amp;headers=false" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+    </div>
   </div>
   
-  <!-- Experts Section -->
+  <script>
+    function checkPassword() {
+      var pwd = prompt("Enter password to view current status:");
+      if (pwd === "yourpassword") {  // Replace "yourpassword" with your chosen password
+        document.getElementById("sheet-container").style.display = "block";
+      } else {
+        alert("Access Denied!");
+      }
+    }
+  </script>
+  
   <div class="experts">
     <h2>Our Technical Experts</h2>
     <div class="expert-item">
