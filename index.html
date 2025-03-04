@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Allan Smith Task Portal</title>
   <style>
     body {
@@ -13,26 +13,23 @@
       margin: 0;
       padding: 0;
     }
+    /* Header with cover photo as background */
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.1);
       position: relative;
+      background-image: url('cover-photo.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px; /* Adjust as needed */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+    /* Logo positioned over the cover photo */
     .logo {
-      height: 100px;
       position: absolute;
-      left: 20px;
       top: 20px;
-    }
-    .cover-photo {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-top: 20px;  /* Push cover photo down a bit */
+      left: 20px;
+      height: 100px; /* Adjust size as needed */
     }
     .portal-container {
       display: flex;
@@ -65,9 +62,6 @@
       padding: 15px;
       border-radius: 10px;
     }
-    .site-status h2 {
-      margin-bottom: 10px;
-    }
     .experts {
       margin: 30px auto;
       padding: 20px;
@@ -75,9 +69,10 @@
       background: rgba(255, 255, 255, 0.2);
       border-radius: 10px;
     }
+    /* Override the experts heading: bold and black */
     .experts h2 {
-      margin-bottom: 15px;
-      color: #ffcc00;  /* Experts heading in yellow */
+      color: black !important;
+      font-weight: bold !important;
     }
     .expert-item {
       display: flex;
@@ -93,7 +88,7 @@
     }
     .expert-details {
       text-align: left;
-      color: #ffff00;  /* Expert details in bright yellow */
+      color: #ffff00; /* Expert details remain in yellow, modify if needed */
     }
     footer {
       margin-top: 30px;
@@ -114,12 +109,14 @@
   </style>
 </head>
 <body>
+  <!-- Header with cover photo background and logo -->
   <header>
     <img src="logo.png" alt="Company Logo" class="logo">
   </header>
   
-  <!-- Ensure your cover photo file is named "cover-photo.jpg" -->
-  <img src="cover-photo.jpg" alt="Cover Photo" class="cover-photo">
+  <div class="welcome-message">
+    Welcome to Allan Smith Task Portal
+  </div>
   
   <div class="portal-container">
     <div class="portal" onclick="window.open('https://forms.gle/AR6n6kSKjc7GRiDF7', '_blank');">
@@ -130,11 +127,7 @@
     </div>
   </div>
   
-  <div class="welcome-message">
-    Welcome to Allan Smith Task Portal
-  </div>
-  
-  <!-- Site Current Status Section with Password-Protected Google Sheet -->
+  <!-- Site Current Status Section with password-protected Google Sheet -->
   <div class="site-status">
     <h2>Site Current Status</h2>
     <button onclick="checkPassword()" style="padding:10px 20px; font-size:16px; cursor:pointer;">View Status</button>
@@ -146,7 +139,7 @@
   <script>
     function checkPassword() {
       var pwd = prompt("Enter password to view current status:");
-      if (pwd === "yourpassword") {  // Replace "yourpassword" with your actual password
+      if (pwd === "yourpassword") {  // Replace "yourpassword" with your desired password
         document.getElementById("sheet-container").style.display = "block";
       } else {
         alert("Access Denied!");
@@ -154,18 +147,19 @@
     }
   </script>
   
+  <!-- Experts Section -->
   <div class="experts">
     <h2>Our Technical Experts</h2>
     <div class="expert-item">
       <img src="salish.jpg" alt="Salish Vishwakarma" class="expert-img">
       <div class="expert-details">
-        <p><strong>Shailesh Kumar </strong></p>
-        <p>GM Technical </p>
-        <p>shailesh@smithengg.in</p>
+        <p><strong>Salish Vishwakarma</strong></p>
+        <p>Sr. Technical Expert</p>
+        <p>+919892312317</p>
       </div>
     </div>
     <div class="expert-item">
-      <img src="pratik Badkhal.jpg" alt="Pratik Badkhal" class="expert-img">
+      <img src="pratik.jpg" alt="Pratik" class="expert-img">
       <div class="expert-details">
         <p><strong>Pratik</strong></p>
         <p>Sr. Executive Engineer</p>
@@ -175,8 +169,8 @@
     <div class="expert-item">
       <img src="nidhi.jpg" alt="Nidhi" class="expert-img">
       <div class="expert-details">
-        <p><strong>Mrs. Nidhi</strong></p>
-        <p>Hr & Admin</p>
+        <p><strong>Nidhi</strong></p>
+        <p>Technical Consultant</p>
         <p>+919004676484</p>
       </div>
     </div>
