@@ -1,97 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smith Task Portal</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #4facfe, #00f2fe);
-            text-align: center;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.1);
-        }
-        .logo {
-            height: 120px;
-            position: absolute;
-            left: 20px;
-            top: 10px;
-        }
-        .cover-photo {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        .portal-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        .portal {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 15px 30px;
-            margin: 10px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 20px;
-            transition: 0.3s;
-        }
-        .portal:hover {
-            background: rgba(255, 255, 255, 0.5);
-        }
-        .welcome-message {
-            margin-top: 20px;
-            font-size: 22px;
-            font-weight: bold;
-            padding: 10px;
-        }
-        .experts {
-            margin-top: 50px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-        footer {
-            margin-top: 50px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.2);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smith Task Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      text-align: center;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .logo {
+      height: 100px;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+    }
+    .cover-photo {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .portal-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .portal {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px 30px;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+    .portal:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .welcome-message {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 10px;
+    }
+    .current-status {
+      margin: 20px auto;
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .current-status h2 {
+      margin-bottom: 10px;
+    }
+    .experts {
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+    }
+    .experts h2 {
+      margin-bottom: 15px;
+    }
+    .expert-item {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+    .expert-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+    .expert-details {
+      text-align: left;
+    }
+    footer {
+      margin-top: 30px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+    @media (max-width: 600px) {
+      .portal-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo {
+        height: 60px;
+        top: 10px;
+        left: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Company Logo" class="logo">
-    </header>
-    <img src="cover-photo.jpg" alt="Cover Photo" class="cover-photo">
-    
-    <div class="portal-container">
-        <div class="portal" onclick="window.location.href='https://forms.gle/AR6n6kSKjc7GRiDF7'">Employee Portal</div>
-        <div class="portal" onclick="window.location.href='https://forms.gle/r5dfrSkoWEYC1iGN6'">Customer Portal</div>
+  <header>
+    <img src="logo.png" alt="Company Logo" class="logo">
+  </header>
+  
+  <!-- Make sure your cover photo file is named "cover-photo.jpg" -->
+  <img src="cover-photo.jpg" alt="Cover Photo" class="cover-photo">
+  
+  <div class="portal-container">
+    <div class="portal" onclick="location.href='https://forms.gle/AR6n6kSKjc7GRiDF7';">
+      Employee Portal
     </div>
-    
-    <div class="welcome-message">Welcome to the Smith Task Portal</div>
-    
-    <a href="achievements.html" style="color: white; font-size: 20px; text-decoration: none; display: block; margin-top: 20px;">🎖 View Our Achievements</a>
-    
-    <div class="experts">
-        <h2>Our Technical Experts</h2>
-        <p>🔹 Sailesh Vishwakarma (Sr. Technical Expert)</p>
-        <p>🔹 Pratik (Sr. Executive Engineer)</p>
-        <p>🔹 Nidhi (Technical Consultant)</p>
+    <div class="portal" onclick="location.href='https://forms.gle/r5dfrSkoWEYC1iGN6';">
+      Customer Portal
     </div>
-    
-    <footer>
-        © 2025 Smith Task Portal. All Rights Reserved.
-    </footer>
+  </div>
+  
+  <div class="welcome-message">
+    Welcome to Smith Task Portal
+  </div>
+  
+  <!-- Current Status Section with Google Sheet Embed -->
+  <div class="current-status">
+    <h2>Current Status</h2>
+    <iframe src="https://docs.google.com/spreadsheets/d/1EBUQZegNP_XHgzApNnp5gij40kFdrgaw_JYqmd0ycLg/pubhtml?widget=true&amp;headers=false" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+  </div>
+  
+  <!-- Experts Section -->
+  <div class="experts">
+    <h2>Our Technical Experts</h2>
+    <div class="expert-item">
+      <img src="salish.jpg" alt="Salish Vishwakarma" class="expert-img">
+      <div class="expert-details">
+        <p><strong>Salish Vishwakarma</strong></p>
+        <p>Sr. Technical Expert</p>
+        <p>+919892312317</p>
+      </div>
+    </div>
+    <div class="expert-item">
+      <img src="pratik.jpg" alt="Pratik" class="expert-img">
+      <div class="expert-details">
+        <p><strong>Pratik</strong></p>
+        <p>Sr. Executive Engineer</p>
+        <p>+918806053306</p>
+      </div>
+    </div>
+    <div class="expert-item">
+      <img src="nidhi.jpg" alt="Nidhi" class="expert-img">
+      <div class="expert-details">
+        <p><strong>Nidhi</strong></p>
+        <p>Technical Consultant</p>
+        <p>+919004676484</p>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    © 2025 Smith Task Portal. All Rights Reserved.
+  </footer>
 </body>
 </html>
