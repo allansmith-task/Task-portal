@@ -64,6 +64,7 @@
       padding: 10px;
       background: rgba(0, 0, 0, 0.2);
     }
+
     /* Password Modal Styles */
     #password-modal {
       display: none;
@@ -97,6 +98,26 @@
       color: white;
       border-radius: 5px;
     }
+
+    /* Experts Section Styles */
+    .experts {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .expert-item {
+      display: inline-block;
+      margin: 20px;
+      text-align: center;
+    }
+    .expert-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .expert-details p {
+      margin: 5px 0;
+    }
   </style>
 </head>
 <body>
@@ -128,7 +149,40 @@
     <input type="password" id="password-input" placeholder="Enter Password">
     <button onclick="checkPassword()">Submit</button>
   </div>
+
+  <!-- Experts Section -->
+  <div class="experts">
+    <h2>Our Technical Experts</h2>
+    <div class="expert-item">
+      <img src="salish.jpg" alt="Salish Vishwakarma" class="expert-img">
+      <div class="expert-details">
+        <p><strong>Salish Vishwakarma</strong></p>
+        <p>Sr. Technical Expert</p>
+        <p>+919892312317</p>
+      </div>
+    </div>
+    <div class="expert-item">
+      <img src="Shailesh Kumar.jpg" alt="Shailesh Kumar" class="expert-img">
+      <div class="expert-details">
+        <p><strong>Shailesh Kumar</strong></p>
+        <p>Sr. Technical Expert</p>
+        <p>+919892312317</p>
+      </div>
+    </div>
+    <div class="expert-item">
+      <img src="nidhi.jpg" alt="Mrs. Nidhi" class="expert-img">
+      <div class="expert-details">
+        <p><strong>Nidhi</strong></p>
+        <p>Technical Consultant</p>
+        <p>+919004676484</p>
+      </div>
+    </div>
+  </div>
   
+  <footer>
+    &copy; 2025 Allan Smith Task Portal. All Rights Reserved.
+  </footer>
+
   <script>
     function openPasswordModal() {
       document.getElementById("password-modal").style.display = "block";
@@ -146,9 +200,5 @@
       }
     }
   </script>
-  
-  <footer>
-    &copy; Welcome to Allan Smith Task Portal.
-  </footer>
 </body>
 </html>
