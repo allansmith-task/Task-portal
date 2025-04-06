@@ -14,21 +14,23 @@
       margin: 0;
       padding: 0;
     }
+    /* Header with cover photo as background */
     header {
       position: relative;
       background-image: url('cover-photo.jpg');
       background-size: cover;
       background-position: center;
-      height: 300px;
+      height: 300px; /* Adjust as needed */
       display: flex;
       align-items: center;
       justify-content: center;
     }
+    /* Logo positioned over the cover photo */
     .logo {
       position: absolute;
       top: 20px;
       left: 20px;
-      height: 100px;
+      height: 100px; /* Adjust size as needed */
     }
     .portal-container {
       display: flex;
@@ -48,12 +50,46 @@
     .portal:hover {
       background: rgba(255, 255, 255, 0.5);
     }
+    .welcome-message {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 10px;
+    }
     .site-status {
       margin: 20px auto;
       max-width: 800px;
       background: rgba(0, 0, 0, 0.2);
       padding: 15px;
       border-radius: 10px;
+    }
+    .experts {
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+    }
+    /* Override the experts heading: bold and black */
+    .experts h2 {
+      color: black !important;
+      font-weight: bold !important;
+    }
+    .expert-item {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+    .expert-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+    .expert-details {
+      text-align: left;
+      color: #ffff00; /* Expert details remain in yellow, modify if needed */
     }
     #sheet-container {
       display: none;
@@ -64,67 +100,29 @@
       padding: 10px;
       background: rgba(0, 0, 0, 0.2);
     }
-
-    /* Password Modal Styles */
-    #password-modal {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      color: black;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      text-align: center;
-    }
-    #password-modal input {
-      padding: 10px;
-      font-size: 16px;
-      margin-top: 10px;
-      display: block;
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #password-modal button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      background: #4facfe;
-      border: none;
-      color: white;
-      border-radius: 5px;
-    }
-
-    /* Experts Section Styles */
-    .experts {
-      margin-top: 40px;
-      text-align: center;
-    }
-    .expert-item {
-      display: inline-block;
-      margin: 20px;
-      text-align: center;
-    }
-    .expert-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-    .expert-details p {
-      margin: 5px 0;
+    @media (max-width: 600px) {
+      .portal-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo {
+        height: 60px;
+        top: 10px;
+        left: 10px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Header with cover photo background and logo -->
   <header>
     <img src="logo.png" alt="Company Logo" class="logo">
   </header>
-  
+ 
+  <div class="welcome-message">
+    Welcome to Allan Smith Task Portal
+  </div>
+   
   <div class="portal-container">
     <div class="portal" onclick="window.open('https://forms.gle/AR6n6kSKjc7GRiDF7', '_blank');">
       Employee Portal
@@ -133,72 +131,58 @@
       Customer Portal
     </div>
   </div>
-  
+ 
+  <!-- Site Current Status Section with password-protected Google Sheet -->
   <div class="site-status">
     <h2>Site Current Status</h2>
-    <button onclick="openPasswordModal()" style="padding:10px 20px; font-size:16px; cursor:pointer;">View Status</button>
-    <div id="sheet-container">
-      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQoU9VL7RZRcyup88teZP1WBxswEuPijOz5HK0Uy_gFdm6P1IE5rxqiOvkaOi459DdCpeWFDjGxwrob/pubhtml?widget=true&headers=false" 
-              width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+    <button onclick="checkPassword()" style="padding:10px 20px; font-size:16px; cursor:pointer;">View Status</button>
+    <div id="sheet-container" style="display:none; margin-top:20px;">
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQoU9VL7RZRcyup88teZP1WBxswEuPijOz5HK0Uy_gFdm6P1IE5rxqiOvkaOi459DdCpeWFDjGxwrob/pubhtml?widget=true&amp;headers=false" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
     </div>
   </div>
-
-  <!-- Password Modal -->
-  <div id="password-modal">
-    <h3>Enter Password</h3>
-    <input type="password" id="password-input" placeholder="Enter Password">
-    <button onclick="checkPassword()">Submit</button>
-  </div>
-
-  <!-- Experts Section -->
-  <div class="experts">
-    <h2>Our Technical Experts</h2>
-    <div class="expert-item">
-      <img src="salish.jpg" alt="Salish Vishwakarma" class="expert-img">
-      <div class="expert-details">
-        <p><strong>Salish Vishwakarma</strong></p>
-        <p>Sr. Technical Expert</p>
-        <p>+919892312317</p>
-      </div>
-    </div>
-    <div class="expert-item">
-      <img src="Shailesh Kumar.jpg" alt="Shailesh Kumar" class="expert-img">
-      <div class="expert-details">
-        <p><strong>Shailesh Kumar</strong></p>
-        <p>Sr. Technical Expert</p>
-        <p>+919892312317</p>
-      </div>
-    </div>
-    <div class="expert-item">
-      <img src="nidhi.jpg" alt="Mrs. Nidhi" class="expert-img">
-      <div class="expert-details">
-        <p><strong>Nidhi</strong></p>
-        <p>Technical Consultant</p>
-        <p>+919004676484</p>
-      </div>
-    </div>
-  </div>
-  
-  <footer>
-    &copy; 2025 Allan Smith Task Portal. All Rights Reserved.
-  </footer>
-
+ 
   <script>
-    function openPasswordModal() {
-      document.getElementById("password-modal").style.display = "block";
-    }
-
     function checkPassword() {
-      var pwd = document.getElementById("password-input").value;
-      var correctPassword = "yourpassword"; // Change this to your actual password
-
-      if (pwd === correctPassword) {
+      var pwd = prompt("Enter password to view current status:");
+      if (pwd === "yourpassword") {  // Replace "yourpassword" with your desired password
         document.getElementById("sheet-container").style.display = "block";
-        document.getElementById("password-modal").style.display = "none";
       } else {
         alert("Access Denied!");
       }
     }
   </script>
+ 
+  <!-- Experts Section -->
+  <div class="experts">
+    <h2>Our Technical Experts</h2>
+    <div class="expert-item">
+      <img src="Shailesh Kumar.jpg" alt="Shailesh Kumar" class="expert-img">
+      <div class="expert-details">
+        <p><strong>Shailesh Kumar</strong></p>
+        <p>Sr. Technical Expert</p>
+        <p>shailesh@smithengg.in</p>
+      </div>
+    </div>
+    <div class="expert-item">
+      <img src="pratik Badkhal.jpg" alt="Pratik Badkhal" class="expert-img">
+      <div class="expert-details">
+        <p><strong>Pratik Badkhal</strong></p>
+        <p>Sr. Executive Engineer</p>
+        <p>+918806053306</p>
+      </div>
+    </div>
+    <div class="expert-item">
+      <img src="Mrs.Nidhi.jpg" alt="Mrs.Nidhi" class="expert-img">
+      <div class="expert-details">
+        <p><strong>Mrs.Nidhi</strong></p>
+        <p>Technical Consultant</p>
+        <p>+919004676484</p>
+      </div>
+    </div>
+  </div>
+   
+  <footer>
+    &copy; Welcome to Allan Smith Task Portal.
+  </footer>
 </body>
 </html>
